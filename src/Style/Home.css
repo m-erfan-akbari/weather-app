@@ -1,0 +1,135 @@
+@font-face {
+  font-family: vazir;
+  src: url('../../public/fonts/Vazir-Medium-FD-WOL.ttf');
+}
+body{
+  font-family: vazir;
+  direction: rtl;
+  background-color: #333;
+  color: #eee;
+}
+
+main{
+  background-color: rgb(108,117,125);
+  color: #1f1f1f;
+  padding: 30px 0;
+  max-width: 350px;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 6.5vh;
+}
+
+#search-container{
+  display: flex;
+}
+
+#search-container label{
+  font-size: 19px;
+}
+
+#input-search-city{
+  flex-basis: 250px;
+  background-color: #ddd;
+  box-shadow: 0 0 5px rgb(117, 102, 87)
+}
+
+#input-search-city + button{
+  margin: .5rem auto 0 .4rem;
+  scale: .96;
+}
+
+#search-icon{
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+#weather-container{
+  overflow: hidden;
+}
+
+#weather-container > div{
+  border-radius: .5rem;
+  width: 87%;
+}
+
+::placeholder {
+  color: rgb(153, 153, 153) !important;
+}
+
+#weather-icon{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: -25px;
+  top: -60px;
+  animation: grown 2500ms infinite linear;
+  animation: movement 20s infinite cubic-bezier(0.15, 0.3, 0.29, 0.71);
+}
+
+#weather-temp{
+  color: #1a1a1a;
+}
+
+#sun-container{
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+#sun-image{
+  position: absolute;
+  width: 65px;
+  bottom: -28px;
+  left: 0px;
+  animation: sunrise-sunset 5s normal infinite;
+}
+
+#humidity-image{
+  width: 30px;
+  height: 30px;
+}
+
+#wind-image{
+  filter: invert(1);
+}
+
+.error-title{
+  color: rgb(141, 0, 0);
+}
+
+/* keyframes */
+@keyframes grown{
+  0%, 50%{
+    transform: scale(1);
+  }
+  25%{
+    transform: scale(1.045, 1.02);
+  }
+  75%{
+    transform: scale(.965, .98);
+  }
+}
+
+@keyframes movement {
+  0%{
+    transform: translateX(-90px);
+  }
+  100%{
+    transform: translateX(339px);
+  }
+}
+
+@keyframes sunrise-sunset {
+  0%{
+    transform: translate(210px, 0);
+    margin-bottom: -50px;
+  }
+  40%{
+    margin-bottom: 40px;
+  }
+  100%{
+    transform: translate(0, 0);
+    margin-bottom: -50px;
+  }
+}

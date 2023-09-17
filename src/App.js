@@ -1,21 +1,17 @@
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.rtl.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min';
-
-/*
-async function searchWeather(city) {
-  const apiKey = 'cfbdccebe58f79a4e1c5de3700f4f8d5';
-  const apiURL = 'https://api.openweathermap.org/data/2.5/weather?&units=metric&lang=fa';
-  let apiWeather = `${apiURL}&appid=${apiKey}&q=${city}`;
-  const res = await fetch(apiWeather);
-  return await res.json();
-}
-*/
+import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'
+import { ApiProvider } from '@reduxjs/toolkit/query/react'
+import { weatherSlice } from './features/api/weatherSlice';
+import Home from './component/Home';
 
 function App() {
   return (
-    <main className="App">
-      <h1 className='text-center'>Weather App</h1>
-    </main>
+    <ApiProvider api={weatherSlice}>
+      <div className="App">
+        <Home />
+      </div>
+    </ApiProvider>
   );
 }
 
